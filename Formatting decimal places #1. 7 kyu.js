@@ -1,17 +1,11 @@
-// https://www.codewars.com/kata/5641c3f809bf31f008000042/train/javascript
+//
 
-// Each floating-point number should be formatted that only the first two decimal places are returned. You don't need to check whether the input is a valid number because only valid numbers are used in the tests.
-//
-// Don't round the numbers! Just cut them after two decimal places!
-//
-// Right examples:
-// 32.8493 is 32.84
-// 14.3286 is 14.32
-//
-// Incorrect examples (e.g. if you round the numbers):
-// 32.8493 is 32.85
-// 14.3286 is 14.33
 
-function twoDecimalPlaces(num) {
-    return Math.trunc(num * 100) / (100);
+function victoryInSwim(arr){
+    let arr2 = [];
+  for(let el of arr){
+      arr2.push(el[1])
+  }
+  return Math.min(...arr2);
 }
+console.log(victoryInSwim([['Nick',8], ['Bob', 10], ['Kim', 6]]))

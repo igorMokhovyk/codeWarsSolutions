@@ -1,35 +1,54 @@
-//https://www.codewars.com/kata/55f2b110f61eb01779000053/train/javascript
-
-//Given two integers a and b, which can be positive or negative, find the sum of all the numbers between including them too and return it. If the two numbers are equal return a or b.
+// function sumMultN(n, m){
+//   let sum = 0;
+//   if(n === m){
+//       return n;
+//   }
+//   if(n > m){
+//       return 0;
+//   }
+//   if(n < m){
+//       for(let i = n; i <= m; i = i +n){
+//           sum += i;
 //
-// Note: a and b are not ordered!
+//       }
+//       return sum;
+//   }
 //
-// Examples
-// GetSum(1, 0) == 1   // 1 + 0 = 1
-// GetSum(1, 2) == 3   // 1 + 2 = 3
-// GetSum(0, 1) == 1   // 0 + 1 = 1
-// GetSum(1, 1) == 1   // 1 Since both are same
-// GetSum(-1, 0) == -1 // -1 + 0 = -1
-// GetSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
+// }
+// console.log(sumMultN(4,12))
+
+// function sumOfFractionals(n){
+//     let sum = 0;
+//     if(n === 1){
+//         return 1;
+//     }
+//     if(n > 0){
+//         for(let i = 1; i <= n; i++){
+//             sum = sum + (1/i);
+//
+//         }
+//         return sum.toFixed(2)
+//     }
+//
+// }
+// console.log(sumOfFractionals(5))
 
 
-function getSum(a,b) {
-    let total = 0;
-    if (a === b) {
-        return a;
-    }
 
-    if (a < b) {
-        for (let i = a; i <= b; i++) {
-            total += i;
+//
+
+
+function dividers(n){
+    let sum = [];
+    let b;
+    if(n>0){
+        for(let i = 1; i <= n; i++){
+            if(n%i === 0){
+               sum.push(i);
+            }
         }
-        return total;
-    }
 
-    if (b < a) {
-        for (let i = b; i <= a; i++) {
-            total += i;
-        }
-        return total;
     }
+    return sum;
 }
+console.log(dividers(200))

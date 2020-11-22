@@ -1,15 +1,22 @@
-// https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6/train/javascript
+function race(v1, v2, g) {
+    let arrRes = [];
+    let v1Sec = v1/3600;
+    let v2Sec = v2/3600;
+    let aStart = 70;
+    let bStart = 0;
+    let time = 0;
+    if(v1 >= v2){
+        return null;
+    }
+    while(bStart <= aStart){
+        aStart += v1Sec;
+        bStart += v2Sec;
+        time++
 
-//The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
-//
-// For example:
-//
-// cockroachSpeed(1.08) == 30
-// Note! The input is a Real number (actual type is language dependent) and is >= 0. The result should be an Integer.
-
-
-function cockroachSpeed(s) {
-    //in 1 km sm = 1000 * 100;
-    //in 1 hour, sec = 3600;
-    return Math.floor((s * 1000 * 100) / 3600);
+    }
+    arrRes.push(Math.trunc(time/3600));
+    arrRes.push(Math.trunc(time/60));
+    //let sec = time - (time/3600 + time/60);
+    return arrRes;
 }
+console.log(race(80, 100, 40))

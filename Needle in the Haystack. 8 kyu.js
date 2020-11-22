@@ -1,23 +1,29 @@
-// https://www.codewars.com/kata/56676e8fabd2d1ff3000000c/train/javascript
-
-// Can you find the needle in the haystack?
-//
-// Write a function findNeedle() that takes an array full of junk but containing one "needle"
-//
-// After your function finds the needle it should return a message (as a string) that says:
-//
-// "found the needle at position " plus the index it found the needle, so:
-//
-// findNeedle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk'])
-// should return "found the needle at position 5"
-
-
-function findNeedle(haystack) {
-    let ind;
-    for(let el of haystack) {
-        if(el === 'needle'){
-            ind = haystack.indexOf(el);
+const capitals = function (word) {
+    let res = [];
+    let wordSplit = word.split('')
+    for(let i = 0; i < wordSplit.length; i++){
+        if(wordSplit[i].match(/[A-Z]/g)){
+            res.push(i)
         }
     }
-    return `found the needle at position ${ind}`
-}
+    return res
+};
+console.log(capitals('CodEWaRs'), [0,3,4,6])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

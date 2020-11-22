@@ -7,12 +7,16 @@
 // Note: The function accepts an integer and returns an integer
 
 
-function squareDigits(num){
+function squareOrSquareRoot(arr) {
     let newArr = [];
-    let numStr = num + '';
-    let numArr = numStr.split('');
-    for(let el of numArr){
-        newArr.push(Math.pow(+el, 2));
+    for(let el of arr){
+        if(Math.pow(el, 0.5) === Math.trunc(Math.sqrt(el))){
+            newArr.push(Math.pow(el, 0.5));
+        }
+        else{
+            newArr.push(Math.pow(el, 2));
+        }
     }
-    return +newArr.join('');
+    return newArr;
 }
+console.log(squareOrSquareRoot([ 4, 3, 9, 7, 2, 1 ]));

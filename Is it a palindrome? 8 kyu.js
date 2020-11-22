@@ -1,13 +1,15 @@
-// https://www.codewars.com/kata/57a1fd2ce298a731b20006a4/train/javascript
-
-// Write function isPalindrome that checks if a given string (case insensitive) is a palindrome.
-//
-//     In Racket, the function is called palindrome?
-//
-//     (palindrome? "nope") ; returns #f
-// (palindrome? "Yay")  ; returns #t
-
-
-function isPalindrome(x) {
-    return x.split('').reverse().join('').toLowerCase() === x.toLowerCase()
+function solve(s) {
+    let countUpper = 0;
+    let countLower = 0;
+    for (let i = 0; i < s.length; i++) {
+        if (s[i].match(/[A-Z]/g)) {
+            countUpper++
+        }
+        if (s[i].match(/[a-z]/g)) {
+            countLower++
+        }
+    }
+    return countUpper > countLower ? s.toUpperCase() : s.toLowerCase();
 }
+
+console.log(solve("CODe"))

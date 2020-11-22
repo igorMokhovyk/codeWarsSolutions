@@ -1,44 +1,13 @@
-// https://www.codewars.com/kata/5c374b346a5d0f77af500a5a/train/javascript
-
-// Given 2 elevators (named "left" and "right") in a building with 3 floors (numbered 0 to 2), write a function elevator accepting 3 arguments (in order):
-//
-// left - The current floor of the left elevator
-// right - The current floor of the right elevator
-// call - The floor that called an elevator
-// It should return the name of the elevator closest to the called floor ("left"/"right").
-//
-// In the case where both elevators are equally distant from the called floor, choose the elevator to the right.
-//
-// You can assume that the inputs will always be valid integers between 0-2.
-//
-// Examples:
-//
-// elevator(0, 1, 0); // => "left"
-// elevator(0, 1, 1); // => "right"
-// elevator(0, 1, 2); // => "right"
-// elevator(0, 0, 0); // => "right"
-// elevator(0, 2, 1); // => "right"
-
-
-function elevator(left, right, call){
-    if(right === left && call === right){
-        return 'right';
+function count(arr){
+    let res = [];
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < arr[i].length; j++){
+            if(arr[i][j] < 0){
+                res.push(arr[i]);
+                break;
+            }
+        }
     }
-    if(call === right ||call > right && left < right){
-        return 'right';
-    }
-    if(call === left || call > left && left > right || call < left && left < right){
-        return 'left';
-    }else{
-        return 'right';
-    }
+    return res.length;
 }
-
-
-
-//OR
-
-
-function elevator(left, right, call){
-    return Math.abs(left - call) < Math.abs(right - call) ? 'left' : 'right';
-}
+console.log(count([[1, 4, 6], [-1, 6 -9], [9, 4, -43]]));
