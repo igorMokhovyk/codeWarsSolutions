@@ -1,9 +1,12 @@
-// https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/train/javascript
+function findScreenHeight(width, ratio) {
+    let ratioNum = []
+   let ratioAnsw =  ratio.split(':');
+    for(let el of ratioAnsw) {
+        if (!isNaN(+el)) {
+            ratioNum.push(+el);
+        }
+    }
+    return `${width}x${width-(width - (width/(ratioNum[0] / ratioNum[1])))}`
+}
+console.log(findScreenHeight(1280,"16:9"));
 
-
-//Simple, given a string of words, return the length of the shortest word(s).
-//
-// String will never be empty and you do not need to account for different data types.
-
-
-const findShort = s => Math.min(...s.split(' ').map(word => word.length))
