@@ -17,9 +17,7 @@ function pigIt(str){
       else {
           newW += el.slice(1) + el.substring(0, 1) + "ay" + ' '
       }
-
   }
-
     return newW.trim()
 }
 
